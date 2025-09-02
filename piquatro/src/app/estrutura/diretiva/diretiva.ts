@@ -8,11 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Diretiva {
 
-  ListaAlunos = [ 'Clara', 'Arthur', 'Thais', 'Gustavo'];
-
-  mostarMensagem = true;
+  mostrarLista = true;
 
   toggleMensagem() {
-    this.mostarMensagem =!this.mostarMensagem;
+    this.mostrarLista = !this.mostrarLista;
   }
-}
+  }
