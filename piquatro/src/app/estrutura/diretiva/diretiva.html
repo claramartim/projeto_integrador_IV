@@ -1,7 +1,14 @@
-<p *nglf="mostrarLista">Exibir Lista</p>
-<button (click)="toggleMensagem()">Ocultar Lista</button>
+<mat-toolbar>
+  <span>Tarefa Lista Alunos</span>
+</mat-toolbar>
 
-
-
-
-
+<button (click)="toggleMensagem()">
+    {{ mostrarLista ? 'Ocultar Lista' : 'Exibir Lista'}}
+</button>
+<div *ngIf="mostrarLista"> 
+<ul>
+    <li *ngFor="let aluno of ListaAlunos"> 
+        {{ aluno.id }} - {{ aluno.nome }} - {{ aluno.status }}
+    </li>
+</ul>
+</div>
