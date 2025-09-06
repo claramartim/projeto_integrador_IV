@@ -5,10 +5,18 @@
 <button (click)="toggleMensagem()">
     {{ mostrarLista ? 'Ocultar Lista' : 'Exibir Lista'}}
 </button>
+
 <div *ngIf="mostrarLista"> 
-<ul>
-    <li *ngFor="let aluno of ListaAlunos"> 
-        {{ aluno.id }} - {{ aluno.nome }} - {{ aluno.status }}
-    </li>
-</ul>
+    <ul [ngStyle]="{ 'font-size': tamanhoFontePx }">
+        <li *ngFor="let aluno of ListaAlunos">
+            {{ aluno.id }} - {{ aluno.nome }} - 
+            <span [ngClass]= "{ 'ativo': aluno.ativo, 'inativo': !aluno.ativo}">
+            {{ aluno.status }}
+            </span>
+        </li>
+    </ul>
 </div>
+
+<button (click)="Somar()">+</button>
+<button (click)="Subtrair()">-</button>
+

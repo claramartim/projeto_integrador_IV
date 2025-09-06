@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './diretiva.css'
 })
 export class Diretiva {
-
+  
   ListaAlunos = [
-    { id: 1, nome: 'Clara', status: 'ativo' },
-    { id: 2, nome: 'Arthur', status: 'ativo' },
-    { id: 3, nome: 'Roregio', status: 'inativo' },
-    { id: 4, nome: 'Willian', status: 'inativo'}
+    { id: 1, nome: 'Clara', status: 'Ativo', ativo: true },
+    { id: 2, nome: 'Arthur', status: 'Inativo', ativo: false },
+    { id: 3, nome: 'Roregio', status: 'Ativo', ativo: true },
+    { id: 4, nome: 'Willian', status: 'Inativo', ativo: false}
     
     ];
 
@@ -21,4 +21,26 @@ export class Diretiva {
   toggleMensagem() {
     this.mostrarLista = !this.mostrarLista;
   }
+
+  tamanhoFonte= 15;
+
+  Somar(){
+    if(this.tamanhoFonte < 30) {
+        this.tamanhoFonte += 2;
+      }
+  }
+
+  Subtrair(){
+    if(this.tamanhoFonte > 5){
+      this.tamanhoFonte -= 2;
+  }
+  }
+    
+
+  get tamanhoFontePx(){
+    return `${this.tamanhoFonte}px`;
+  }
+
+
+
   }
