@@ -1,0 +1,8 @@
+<p *ngIf="mostrarEstoque"> Disponível </p>
+<button (click)="toggleMensagem()">Mostrar Estoque</button>
+<div>
+    <ul>
+        <li *ngFor="let produto of Produtos">
+            {{ produto.nome }} - {{ produto.preco }} - {{ produto.estoque }}</li>
+    </ul>
+</div>
